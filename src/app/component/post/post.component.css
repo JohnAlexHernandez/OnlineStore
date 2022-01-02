@@ -1,0 +1,28 @@
+.full-width {
+  width: 100%;
+}
+
+.pagination-content {
+  text-align: center;
+}
+
+table {
+  width: 100%;
+}
+
+.container-fluid {
+  padding-top: 1rem;
+}
+
+.no-records {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.mapa {
+  height: 70vh !important;
+  width: 100%;
+}

@@ -1,0 +1,28 @@
+.full-width {
+  width: 100%;
+}
+
+.container-fluid {
+  padding-top: 1rem;
+}
+
+table {
+  width: 100%;
+}
+
+.container-totals {
+  font-size: 4vw;
+}
+
+.no-records {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.mapa {
+  height: 70vh !important;
+  width: 100%;
+}
