@@ -62,11 +62,11 @@ export class VentasComponent implements OnInit {
 
     this.form = this.formBuilder.group({
       id: [],
-      title: [],
-      price: [],
-      description: [],
-      category: [],
-      count: ['', [Validators.required, Validators.pattern('^([0-9])*$')]],
+      title: ['', [Validators.required]],
+      price: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      category: ['', [Validators.required]],
+      count: ['', [Validators.required, Validators.pattern('^([0-9]+)*$')]],
       subtotal: [],
     });
   }
@@ -103,18 +103,18 @@ export class VentasComponent implements OnInit {
     }
   }
 
-  editVenta(id: any, post: venta, cantidad: any) {
+  editVenta(id: any, venta: venta, cantidad: any) {
     this.isUpdate = true;
     this.form.controls.id.patchValue(id);
-    this.form.controls.title.patchValue(post.title);
-    this.form.controls.price.patchValue(post.price);
-    this.form.controls.description.patchValue(post.description);
+    this.form.controls.title.patchValue(venta.title);
+    this.form.controls.price.patchValue(venta.price);
+    this.form.controls.description.patchValue(venta.description);
     this.form.controls.count.patchValue(cantidad);
-    this.form.controls.category.patchValue(post.category);
+    this.form.controls.category.patchValue(venta.category);
   }
 
   deleteVenta(venta: venta) {
-    if (confirm('¿Estás seguro de que quieres eliminar la venta?')) {
+    if (confirm('¿Estás seguro de querer eliminar la venta?')) {
       let i = this.ventaService.ventas.indexOf(venta);
       if (i !== -1) {
         this.ventaService.ventas.splice(i, 1);
@@ -137,6 +137,8 @@ export class VentasComponent implements OnInit {
     this.dataSource.paginator = this.paginator;
     if (this.postsfacturados > 0) {
       this.cargarPost();
+    } else {
+      this.resetForm(this.form);
     }
   }
 

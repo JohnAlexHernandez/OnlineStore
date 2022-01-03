@@ -54,13 +54,12 @@ export class PostComponent implements OnInit {
     this.form = this.formBuilder.group({
       id: [],
       title: ['', [Validators.required]],
-      price: [
-        '',
-        [Validators.required, Validators.pattern('^[0-9]+(.[0-9]{0,2})?$')],
-      ],
+      price: ['', [Validators.required, Validators.pattern('^[0-9]+(.[0-9]{0,2})?$')]],
       description: ['', [Validators.required]],
       category: ['', [Validators.required]],
-      count: ['', [Validators.required, Validators.pattern('^([0-9])*$')]],
+      rating: this.formBuilder.group({
+        count: ['', [Validators.required, Validators.pattern('^([0-9]+)*$')]],
+      }),
     });
   }
 
@@ -80,6 +79,7 @@ export class PostComponent implements OnInit {
       return;
     } else {
       if (form.value.id) {
+        console.log(form.value);
         this.postService.updatePost(form.value).subscribe(
           (res) => {
             console.log(res);
@@ -119,7 +119,7 @@ export class PostComponent implements OnInit {
   }
 
   deletePost(id: number) {
-    if (confirm('¿Estás seguro de que quieres eliminar el artículo?')) {
+    if (confirm('¿Estás seguro de querer eliminar el artículo?')) {
       this.postService.deletePost(id).subscribe(
         (res) => {
           console.log(res);

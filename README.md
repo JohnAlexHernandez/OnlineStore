@@ -1,27 +1,47 @@
-# AngProyectRestfull
+# Online Store
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+_Online Store es una tienda el línea que permite comprar productos y realizar el envío a la ubicación de destino seleccionada._
 
-## Development server
+## Comenzando 🚀
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+_Para obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas sigue las siguientes instrucciones:_
 
-## Code scaffolding
+_1. Abre la Git Bash._
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+_2. Cambia el directorio de trabajo actual a la ubicación en donde quieres clonar el directorio._
 
-## Build
+_3. Escribe git clone https://github.com/JohnAlexHernandez/OnlineStore.git_
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Mira **Despliegue** para conocer como desplegar el proyecto.
 
-## Running unit tests
+### Pre-requisitos 📋
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+_Dependencias necesarias para el funcionamiento del proyecto_
 
-## Running end-to-end tests
+_Angular Google Maps_ `npm i @agm/core@1.1.0`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+_AngularJS Material_ `ng add @angular/material`
 
-## Further help
+_NG Bootstrap_`ng add @ng-bootstrap/ng-bootstrap`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+_Agm-Direction_ `npm i agm-direction`
+
+_Agm-Direction_ `npm i agm-direction`
+
+_Bootstrap, jquery y popperjs_ `npm install bootstrap jquery @popperjs/core`
+
+## Despliegue 📦
+
+_Para deplegar el proyecto sigue las siguientes instrucciones:_
+
+_1. Ubicado en el directorio raiz del proyecto ejecute el comando `npm install` para instalar todas las dependencias necesarias para el correcto funcionamiento del proyecto.
+
+_2. En seguida ejecute el comando `ng s -o` para desplegar la aplicación, ahora su navegador predeterminado se abrirá en la ruta `http://localhost:4200/` para visualizar el resultado final_
+
+## Construido con 🛠️
+
+* [Angular](version 11.2.1) - Framework de javascript
+
+## Autores ✒️
+
+* **John Alexander Hernández** - *Creador* - [JohnAlexHernandez](https://github.com/JohnAlexHernandez)

@@ -81,17 +81,17 @@
       <div class="mat-elevation-z2">
         <div class="card">
           <div class="card-body">
+            <h2 class="mat-h2">Ingrese las coordenadas de destino o marque en el mapa la ubicacón.</h2>
             <form [formGroup]="form" (ngSubmit)="trazarRuta(form)">
               <mat-form-field class="full-width" appearance="outline">
-                <mat-label>Coordenadas: latitud, longitud</mat-label>
+                <mat-label>Introduzca las coordenadas de destino</mat-label>
                 <input
                   matInput
                   #focus
                   formControlName="destination"
                   value="{{ coordenada }}"
                   type="text"
-                  placeholder="Introduzca la dirección de destino"
-                  (blur)="habilitarTrazarRuta()"
+                  placeholder="Latitud, Longitud"
                 />
                 <mat-hint>¡Los errores aparecen instantáneamente!</mat-hint>
                 <mat-error *ngIf="form.controls['destination'].errors?.pattern">
@@ -105,10 +105,10 @@
               </mat-form-field>
 
               <div class="float-right">
-                <button class="btn btn-primary" [disabled]="enabled">
+                <button class="btn btn-primary">
                   Trazar ruta
                 </button>
-                <button class="btn btn-success m-2" (click)="enviarPedido()">
+                <button class="btn btn-success m-2" [disabled]="enabled" (click)="enviarPedido()">
                   Enviar pedido
                 </button>
               </div>

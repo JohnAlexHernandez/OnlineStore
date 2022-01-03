@@ -105,10 +105,6 @@ export class GooglemapsComponent implements OnInit {
     });
   }
 
-  habilitarTrazarRuta() {
-    this.enabled = false;
-  }
-
   trazarRuta(form: FormGroup) {
     if (this.form.invalid) {
       return;
@@ -125,6 +121,13 @@ export class GooglemapsComponent implements OnInit {
         lat: parseFloat(latlngDestination[0]),
         lng: parseFloat(latlngDestination[1]),
       };
+    }
+    this.habilitarpedido();
+  }
+
+  habilitarpedido() {
+    if (this.ventaService.ventas.length > 0) {
+      this.enabled = false;
     }
   }
 
@@ -143,6 +146,7 @@ export class GooglemapsComponent implements OnInit {
       };
       this.coordenada =
         this.dir.destination.lat + ',' + this.dir.destination.lng;
+      this.habilitarpedido();
     }
   }
 

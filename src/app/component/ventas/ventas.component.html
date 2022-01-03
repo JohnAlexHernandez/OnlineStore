@@ -20,6 +20,10 @@
               <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Nombre del artículo</mat-label>
                 <input matInput [readonly]="true" formControlName="title" />
+                <mat-hint>¡Los errores aparecen instantáneamente!</mat-hint>
+                <mat-error *ngIf="form.controls['title'].errors?.required">
+                  El nombre es <strong>requerido</strong>
+                </mat-error>
               </mat-form-field>
 
               <mat-form-field class="full-width" appearance="outline">
@@ -30,11 +34,19 @@
                   formControlName="price"
                   type="number"
                 />
+                <mat-hint>¡Los errores aparecen instantáneamente!</mat-hint>
+                <mat-error *ngIf="form.controls['price'].errors?.required">
+                  El precio es <strong>requerido</strong>
+                </mat-error>
               </mat-form-field>
 
               <mat-form-field class="full-width" appearance="outline">
                 <mat-label>Categoría del artículo</mat-label>
                 <input matInput [readonly]="true" formControlName="category" />
+                <mat-hint>¡Los errores aparecen instantáneamente!</mat-hint>
+                <mat-error *ngIf="form.controls['category'].errors?.required">
+                  La categoría es <strong>requerida</strong>
+                </mat-error>
               </mat-form-field>
 
               <mat-form-field class="full-width" appearance="outline">
@@ -44,6 +56,10 @@
                   [readonly]="true"
                   formControlName="description"
                 ></textarea>
+                <mat-hint>¡Los errores aparecen instantáneamente!</mat-hint>
+                <mat-error *ngIf="form.controls['description'].errors?.required">
+                  La descripción es <strong>requerida</strong>
+                </mat-error>
               </mat-form-field>
 
               <mat-form-field class="full-width" appearance="outline">
@@ -152,7 +168,6 @@
             <tbody>
               <tr>
                 <td>
-                  <div class="row">
                     <div class="d-flex justify-content-start col-4">
                       <button
                         class="btn btn-primary m-2"
@@ -168,36 +183,23 @@
                         Terminar venta
                       </button>
                     </div>
-                  </div>
                 </td>
               </tr>
               <tr>
                 <td>
-                  <div class="row">
                     <div
                       class="
                         container-totals
-                        col-8
-                        font-weight-bold
                         d-flex
                         justify-content-end
-                        display-4
-                      "
-                    >
-                      <span>Costo total:</span>
-                    </div>
-                    <div
-                      class="
-                        container-totals
-                        col-4
-                        d-flex
                         font-weight-bold
                         display-4
                       "
                     >
+                    <span>Costo total:
                       {{ ventaService.totalVenta | currency: "$":"symbol" }}
+                    </span>
                     </div>
-                  </div>
                 </td>
               </tr>
             </tbody>
